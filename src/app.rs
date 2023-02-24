@@ -11,7 +11,6 @@ fn switch(routes: Route) -> Html {
     match routes {
         Route::Home => html! { <HomePage /> },
         Route::CatFact => html! {
-
             <CatFact />
         },
         Route::NotFound => html! { <h1>{ "404" }</h1> },

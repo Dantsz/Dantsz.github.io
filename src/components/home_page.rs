@@ -1,13 +1,13 @@
 use yew::prelude::*;
 use stylist::yew::styled_component;
 
-#[styled_component]
-pub fn HomePage() -> Html
+#[function_component(HomePage)]
+pub fn home_page() -> Html
 {
     html!{
         <>
-        <h1 class ={css!(r#"background-color: red;"#)}>{"Home"}</h1>
-        <h2 class ={classes!("1")}> </h2>
+        <h1 class ="text-lg font-semibold text-slate-500">{"Home"}</h1>
+        <h2 class ="text-red-600"> {"About text"}</h2>
         </>
     }
 }
