@@ -1,6 +1,6 @@
 mod app;
 mod article;
-mod cat_fact;
+mod components;
 mod router;
 use app::Main;
 
