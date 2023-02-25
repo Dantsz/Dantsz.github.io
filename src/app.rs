@@ -13,7 +13,7 @@ fn switch(routes: Route) -> Html {
         Route::CatFact => html! {
             <CatFact />
         },
-        Route::NotFound => html! { <h1>{ "404" }</h1> },
+        Route::NotFound => html! { <div> <h1>{ "404" }</h1> <img src="resources/coa.png"/> </div> },
     }
 }
 

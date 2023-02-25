@@ -1,5 +1,4 @@
 mod app;
-mod article;
 mod components;
 mod router;
 use app::Main;
