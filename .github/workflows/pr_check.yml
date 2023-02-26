@@ -27,6 +27,8 @@ jobs:
       uses: jetli/trunk-action@v0.1.0
       with:
         version: 'latest'
+    - name: run install
+      run: npm install
     - name: Build
       run: trunk build
     - name: Run tests
