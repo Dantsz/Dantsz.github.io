@@ -18,3 +18,4 @@ serde_json = "*"
 gloo-net = "0.2.6"
 wasm-bindgen-futures = "0.4.34"
 yew-interop = { version = "0.3.0", features = ["script"] }
+comrak = "0.16.0"
