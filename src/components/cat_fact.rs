@@ -12,8 +12,7 @@ struct CatFactState
 
 enum CatFactAction
 {
-    Set(String),
-    Refresh
+    Set(String)
 }
 
 impl Reducible for CatFactState
@@ -26,8 +25,6 @@ impl Reducible for CatFactState
             CatFactAction::Set(the_fact) => {
                 the_fact
             },
-            CatFactAction::Refresh => self.fact.clone(),
-
         };
         Self{fact}.into()
     }
