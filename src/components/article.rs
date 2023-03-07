@@ -5,7 +5,7 @@ use yew::prelude::*;
 #[derive (Properties,PartialEq)]
 pub struct Props{
     pub src: String,
-    #[prop_or("prose-slate".to_owned())] // default theme
+    #[prop_or("prose-zinc".to_owned())] // default theme
     pub prose_theme : String
 }
 
@@ -32,7 +32,7 @@ pub fn markdown_article(props: &Props) -> Html
     let markdown =  Html::from_html_unchecked(AttrValue::from(markdown_to_html(&*markdown_string,&ComrakOptions::default())));
     html!
     {
-        <article class= {classes!("prose", &props.prose_theme)}>
+        <article class= {classes!("prose", "dark:prose-invert" ,&props.prose_theme)}>
             {markdown}
         </article>
     }
