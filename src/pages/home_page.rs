@@ -13,7 +13,7 @@ pub fn home_page() -> Html
     init('/resources/apps/yorvs_client/yorvs.wasm');
     "#;
     html!{
-        <div class = "h-screen `bg-emerald-200 dark:bg-gray-900 dark:text-indigo-200">
+        <div class = "h-screen w-screen bg-emerald-200 dark:bg-gray-900 dark:text-indigo-200">
             <div class="grid gap-1 grid-cols-12 grid-rows-1">
                 <div class = "col-span-2">
                     <div class = "w-full grid grid-cols-1 grid-rows-2">

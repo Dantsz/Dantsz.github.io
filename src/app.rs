@@ -25,9 +25,11 @@ fn switch(routes: Route) -> Html {
 pub fn app() -> Html {
     html! {
         <div  class = "dark">
+         
             <BrowserRouter>
                 <Switch<Route> render={switch} />
             </BrowserRouter>
+        
         </div>
     }
 }

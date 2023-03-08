@@ -13,7 +13,7 @@ pub struct MWArticlePageProps
 pub fn article_page(props: &MWArticlePageProps)  -> Html
 {
     html!(
-        <div class ="h-screen bg-emerald-200 dark:bg-gray-900 dark:text-indigo-200 grid grid-cols-8">
+        <div class ="w-full h-full bg-emerald-200 dark:bg-gray-900 dark:text-indigo-200 grid grid-cols-8">
             <div class = "col-span-2"> </div>
             <div class = "col-span-6">
             <MarkdownArticle src = {format!("/resources/articles/{}",props.article_id)}></MarkdownArticle>
