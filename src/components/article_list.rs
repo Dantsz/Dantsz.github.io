@@ -23,13 +23,16 @@ pub fn articles_list() -> Html
     }
     html!{
         <>
-            <h1>{"Recent posts"}</h1>
+            <h1>{"Posts: "}</h1>
             <div class="w-full grid grid-cols-1 justify-items-start gap-y-1">
                 {article_list.iter().
                                 map(|name| html!(
-                                    <div class = " w-full bg-gradient-to-r from-indigo-600 to-emerald-500 text-white px-2">
+                                    <div class = " w-full bg-gradient-to-r from-gray-800 to-gray-900 px-2">
                                         <p>{name}</p>
-                                        <p class = "hover:underline">{"Read more"}</p>
+                                        <a href={format!("post/{}",name)}
+                                           class = "hover:underline text-cyan-500">
+                                           { "Read more" }
+                                        </a>
                                     </div>
                                 ))
                                 .collect::<Html>()}

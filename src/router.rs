@@ -6,6 +6,8 @@ pub enum Route {
     Home,
     #[at("/cat_fact")]
     CatFact,
+    #[at("/post/:id")]
+    Post { id: String },
     #[not_found]
     #[at("/404")]
     NotFound,

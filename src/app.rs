@@ -2,6 +2,7 @@ use yew::prelude::*;
 use yew_router::prelude::*;
 use crate::components::cat_fact::CatFact;
 use crate::pages::home_page::HomePage;
+use crate::pages::article_page::MarkdownArticlePage;
 use crate::router::Route;
 
 
@@ -14,6 +15,9 @@ fn switch(routes: Route) -> Html {
             <CatFact />
         },
         Route::NotFound => html! { <div> <h1>{ "404" }</h1> <img src="resources/images/coa.png"/> </div> },
+        Route::Post { id } => html!{
+            <MarkdownArticlePage article_id = {id}></MarkdownArticlePage>
+        },
     }
 }
 

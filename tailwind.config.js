@@ -19,7 +19,9 @@ module.exports = {
         indigo: colors.indigo,
         yellow: colors.yellow,
         teal : colors.teal,
-        red : colors.red
+        red : colors.red,
+        cyan : colors.cyan,
+        sky : colors.sky
       },
     },
     variants: {
