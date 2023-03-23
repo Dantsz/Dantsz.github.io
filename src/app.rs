@@ -1,6 +1,5 @@
 use yew::prelude::*;
 use yew_router::prelude::*;
-use crate::components::cat_fact::CatFact;
 use crate::pages::home_page::HomePage;
 use crate::pages::article_page::MarkdownArticlePage;
 use crate::router::Route;
@@ -11,9 +10,6 @@ use crate::router::Route;
 fn switch(routes: Route) -> Html {
     match routes {
         Route::Home => html! { <HomePage /> },
-        Route::CatFact => html! {
-            <CatFact />
-        },
         Route::NotFound => html! { <div> <h1>{ "404" }</h1> <img src="resources/images/coa.png"/> </div> },
         Route::Post { id } => html!{
             <MarkdownArticlePage article_id = {id}></MarkdownArticlePage>
@@ -25,11 +21,9 @@ fn switch(routes: Route) -> Html {
 pub fn app() -> Html {
     html! {
         <div  class = "dark">
-         
             <BrowserRouter>
                 <Switch<Route> render={switch} />
             </BrowserRouter>
-        
         </div>
     }
 }

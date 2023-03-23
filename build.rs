@@ -1,4 +1,4 @@
-use std::{env, fs, path::Path, ffi::OsStr};
+use std::{ fs, path::Path, ffi::OsStr};
 fn main() -> std::io::Result<()>
 {
     for entry in fs::read_dir(Path::new("resources/articles"))? {
@@ -15,7 +15,6 @@ fn main() -> std::io::Result<()>
     {
         Ok(list) =>
         {
-            
             match list.as_slice().eq(articles.as_bytes())
             {
                 true => Ok(()),
