@@ -1,5 +1,3 @@
-use comrak::{ComrakOptions, markdown_to_html};
-use gloo_net::http::Request;
 use yew::prelude::*;
 
 use crate::components::{article_list::ArticleList};
@@ -8,7 +6,7 @@ use crate::components::{article_list::ArticleList};
 #[function_component(HomePage)]
 pub fn home_page() -> Html
 {
-    let yorvs_load_script = r#"
+    let _yorvs_load_script = r#"
     import init from '/resources/apps/yorvs_client/yorvs_loader.js';
     init('/resources/apps/yorvs_client/yorvs.wasm');
     "#;
