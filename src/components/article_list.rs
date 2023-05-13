@@ -3,25 +3,28 @@ use gloo_net::http::Request;
 use yew::prelude::*;
 
 #[function_component(ArticleList)]
-pub fn articles_list() -> Html
-{
+pub fn articles_list() -> Html {
     let article_list = use_state(|| Vec::<String>::new());
     {
         let articles = article_list.clone();
-        use_effect(||{
+        use_effect(|| {
             wasm_bindgen_futures::spawn_local(async move {
-                articles.set(Request::get("/resources/articles/articles.csv")
-                    .send()
-                    .await
-                    .unwrap()
-                    .text()
-                    .await
-                    .unwrap().split(",").map(|slice| slice.to_owned()).collect::<Vec<String>>()
+                articles.set(
+                    Request::get("/resources/articles/articles.csv")
+                        .send()
+                        .await
+                        .unwrap()
+                        .text()
+                        .await
+                        .unwrap()
+                        .split(",")
+                        .map(|slice| slice.to_owned())
+                        .collect::<Vec<String>>(),
                 );
             });
         });
     }
-    html!{
+    html! {
         <>
             <h1>{"Posts: "}</h1>
             <div class="w-full grid grid-cols-1 justify-items-start gap-y-1">
@@ -29,7 +32,7 @@ pub fn articles_list() -> Html
                                 map(|name| html!(
                                     <div class = " w-full bg-gradient-to-r from-gray-800 to-gray-900 px-2">
                                         <p>{name}</p>
-                                        <a href={format!("post/{}",name)}
+                                        <a href={format!("#/post/{}",name)}
                                            class = "hover:underline text-cyan-500">
                                            { "Read more" }
                                         </a>
@@ -40,4 +43,3 @@ pub fn articles_list() -> Html
         </>
     }
 }
-
