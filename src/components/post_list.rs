@@ -10,7 +10,7 @@ pub fn articles_list() -> Html {
         use_effect(|| {
             wasm_bindgen_futures::spawn_local(async move {
                 articles.set(
-                    Request::get("/resources/articles/articles.csv")
+                    Request::get("/resources/posts/posts.csv")
                         .send()
                         .await
                         .unwrap()

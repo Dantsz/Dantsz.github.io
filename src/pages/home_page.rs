@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::{article_list::ArticleList};
+use crate::components::{post_list::ArticleList};
 
 
 #[function_component(HomePage)]
