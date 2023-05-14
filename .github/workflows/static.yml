@@ -46,7 +46,7 @@ jobs:
       - name: run install
         run: npm install
       - name: Build
-        run: trunk build
+        run: trunk build --release
       - name: Run tests
         run: cargo test --verbose
       - name: Upload artifact
