@@ -1,5 +1,4 @@
 use comrak::{markdown_to_html, ComrakOptions};
-use gloo_console::log;
 use gloo_net::http::Request;
 use yew::prelude::*;
 
@@ -16,7 +15,6 @@ pub fn markdown_article(props: &MWPostProps) -> Html {
     {
         let state = markdown_string.clone();
         let url = props.src.clone();
-        log!(&url);
         use_effect_with_deps(
             |_| {
                 wasm_bindgen_futures::spawn_local(async move {
@@ -33,7 +31,6 @@ pub fn markdown_article(props: &MWPostProps) -> Html {
             (),
         );
     }
-    log!(&*markdown_string);
     let markdown = Html::from_html_unchecked(AttrValue::from(markdown_to_html(
         &*markdown_string,
         &ComrakOptions::default(),
