@@ -19,7 +19,8 @@ fn switch(routes: Route) -> Html {
 #[function_component(Main)]
 pub fn app() -> Html {
     html! {
-        <div  class = "dark">
+        //enforce dark mode
+        <div class = "dark">
             <HashRouter>
                 <Switch<Route> render={switch} />
             </HashRouter>

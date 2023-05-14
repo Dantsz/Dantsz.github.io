@@ -1,7 +1,7 @@
 use gloo_net::http::Request;
-//components that lists the articles written in the resources directory
-use yew::prelude::*;
 
+use yew::prelude::*;
+///Component that lists the articles written in the resources directory
 #[function_component(ArticleList)]
 pub fn articles_list() -> Html {
     let article_list = use_state(|| Vec::<String>::new());

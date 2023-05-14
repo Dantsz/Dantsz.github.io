@@ -9,7 +9,7 @@ pub struct MWPostProps {
     #[prop_or("prose-zinc".to_owned())] // default theme
     pub prose_theme: String,
 }
-
+///Component that renders a markdown article
 #[function_component(MarkdownPost)]
 pub fn markdown_article(props: &MWPostProps) -> Html {
     let markdown_string = use_state(|| String::new());

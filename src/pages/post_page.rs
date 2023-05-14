@@ -6,7 +6,7 @@ use crate::components::post::MarkdownPost;
 pub struct MWPostPageProps {
     pub article_id: String,
 }
-
+///Page for a mardown post
 #[function_component(MarkdownPostPage)]
 pub fn post_page(props: &MWPostPageProps) -> Html {
     html!(
