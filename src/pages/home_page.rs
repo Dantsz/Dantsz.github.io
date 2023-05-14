@@ -6,10 +6,6 @@ use crate::components::{article_list::ArticleList};
 #[function_component(HomePage)]
 pub fn home_page() -> Html
 {
-    let _yorvs_load_script = r#"
-    import init from '/resources/apps/yorvs_client/yorvs_loader.js';
-    init('/resources/apps/yorvs_client/yorvs.wasm');
-    "#;
     html!{
         <div class = "h-screen w-screen bg-emerald-200 dark:bg-gray-900 dark:text-indigo-200">
             <div class="grid gap-1 grid-cols-12 grid-rows-1">
@@ -21,8 +17,6 @@ pub fn home_page() -> Html
                 </div>
                 <div class = "col-span-8">
                       <ArticleList></ArticleList>
-                      /*<canvas id="notan_canvas"></canvas>
-                      <script type="module">{yorvs_load_script}</script>*/
                 </div>
             </div>
         </div>
