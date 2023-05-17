@@ -15,6 +15,8 @@ pub fn markdown_article(props: &MWPostProps) -> Html {
     {
         let state = markdown_string.clone();
         let url = props.src.clone();
+        // This needs to be wrapped in the wasm_bindgen_futures::spawn_local becuase it's an async function, the blocking api of reqwest is not available in wasm :(
+        // Get the markdown file from the server when the component is loaded
         use_effect_with_deps(
             |_| {
                 wasm_bindgen_futures::spawn_local(async move {
@@ -36,6 +38,7 @@ pub fn markdown_article(props: &MWPostProps) -> Html {
         &ComrakOptions::default(),
     )));
     html! {
+        //Tailwind prose pkugin and inverse in dartk
         <article class= {classes!("prose", "dark:prose-invert" ,&props.prose_theme)}>
             {markdown}
         </article>
