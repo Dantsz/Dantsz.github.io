@@ -2,14 +2,14 @@ use gloo_net::http::Request;
 
 use yew::prelude::*;
 ///Component that lists the articles written in the resources directory
-#[function_component(ArticleList)]
-pub fn articles_list() -> Html {
-    let article_list = use_state(|| Vec::<String>::new());
+#[function_component(PostList)]
+pub fn post_list() -> Html {
+    let post_list = use_state(|| Vec::<String>::new());
     {
-        let articles = article_list.clone();
+        let post = post_list.clone();
         use_effect(|| {
             wasm_bindgen_futures::spawn_local(async move {
-                articles.set(
+                post.set(
                     Request::get("/resources/posts/posts.csv")
                         .send()
                         .await
@@ -28,7 +28,7 @@ pub fn articles_list() -> Html {
         <>
             <h1>{"Posts: "}</h1>
             <div class="w-full grid grid-cols-1 justify-items-start gap-y-1">
-                {article_list.iter().
+                {post_list.iter().
                                 map(|name| html!(
                                     <div class = " w-full bg-gradient-to-r from-gray-800 to-gray-900 px-2">
                                         <p>{name}</p>

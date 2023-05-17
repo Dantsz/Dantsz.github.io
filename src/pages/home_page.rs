@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::components::post_list::ArticleList;
+use crate::components::post_list::PostList;
 
 #[function_component(HomePage)]
 pub fn home_page() -> Html {
@@ -13,7 +13,7 @@ pub fn home_page() -> Html {
                     </div>
                 </div>
                 <div class = "col-span-8">
-                      <ArticleList></ArticleList>
+                      <PostList></PostList>
                 </div>
             </div>
         </div>
