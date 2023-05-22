@@ -1,13 +1,20 @@
 use gloo_net::http::Request;
 
 use yew::prelude::*;
+#[derive(Properties, PartialEq)]
+pub struct PostListProps {
+    #[prop_or_default]
+    pub post_displayed_limits: Option<usize>,
+}
+
 ///Component that lists the articles written in the resources directory
 #[function_component(PostList)]
-pub fn post_list() -> Html {
+pub fn post_list(props: &PostListProps) -> Html {
+    let post_displayed_limits = props.post_displayed_limits;
     let post_list = use_state(|| Vec::<String>::new());
     {
         let post = post_list.clone();
-        use_effect(|| {
+        use_effect(move || {
             wasm_bindgen_futures::spawn_local(async move {
                 post.set(
                     Request::get("/resources/posts/posts.csv")
@@ -19,6 +26,7 @@ pub fn post_list() -> Html {
                         .unwrap()
                         .split(",")
                         .map(|slice| slice.to_owned())
+                        .take(post_displayed_limits.unwrap_or(usize::MAX))
                         .collect::<Vec<String>>(),
                 );
             });

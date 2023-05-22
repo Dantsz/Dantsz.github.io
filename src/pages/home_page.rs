@@ -13,7 +13,7 @@ pub fn home_page() -> Html {
                     </div>
                 </div>
                 <div class = "col-span-8">
-                      <PostList></PostList>
+                      <PostList post_displayed_limits = 6 ></PostList>
                 </div>
             </div>
         </div>
