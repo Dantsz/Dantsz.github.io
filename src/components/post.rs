@@ -5,7 +5,6 @@ use yew::prelude::*;
 #[derive(Properties, PartialEq)]
 pub struct MWPostProps {
     pub src: String,
-    #[prop_or("prose-zinc".to_owned())] // default theme
     pub prose_theme: String,
 }
 ///Component that renders a markdown article
