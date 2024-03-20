@@ -11,12 +11,12 @@ categories = ["gui", "wasm", "web-programming"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
-yew = { version="0.20", features=["csr"] }
-yew-router = "0.17"
+yew = { version="0.21.0", features=["csr"] }
+yew-router = "0.18.0"
 serde = "*"
 serde_json = "*"
-gloo-net = "0.2.6"
+gloo-net = "0.5.0"
 wasm-bindgen-futures = "0.4.34"
 yew-interop = { version = "0.3.0", features = ["script"] }
-comrak = "0.18.0"
-gloo-console = "0.2.3"
+comrak = "0.21.0"
+gloo-console = "0.3.0"
