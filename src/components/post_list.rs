@@ -33,9 +33,9 @@ pub fn post_list(props: &PostListProps) -> Html {
         });
     }
     html! {
-        <>
-            <h1>{"Posts: "}</h1>
-            <div class="w-full grid grid-cols-1 justify-items-start gap-y-1">
+        <div class="flex flex-col gap-5">
+            <div class="text-4xl">{"Posts: "}</div>
+            <div class="w-full grid grid-cols-1 justify-items-start gap-y-5">
                 {post_list.iter().
                                 map(|name| html!(
                                     <div class = " w-full bg-gradient-to-r from-gray-800 to-gray-900 px-2">
@@ -48,6 +48,6 @@ pub fn post_list(props: &PostListProps) -> Html {
                                 ))
                                 .collect::<Html>()}
             </div>
-        </>
+        </div>
     }
 }
