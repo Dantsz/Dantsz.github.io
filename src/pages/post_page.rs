@@ -10,7 +10,7 @@ pub struct MWPostPageProps {
 #[function_component(MarkdownPostPage)]
 pub fn post_page(props: &MWPostPageProps) -> Html {
     html!(
-        <div class = {format!("{} {}", "w-full h-full grid grid-cols-8",BLOG_STYLE)}>
+        <div class = {classes!("w-full", "h-full", "grid", "grid-cols-8",BLOG_STYLE)}>
             <div class = "col-span-2"> </div>
             <div class = "col-span-6">
             <MarkdownPost prose_theme= "prose-zinc" src = {format!("/resources/posts/{}",props.article_id)}></MarkdownPost>
