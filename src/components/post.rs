@@ -34,7 +34,7 @@ pub fn markdown_article(props: &MWPostProps) -> Html {
         &ComrakOptions::default(),
     )));
     html! {
-        //Tailwind prose pkugin and inverse in dartk
+        //Tailwind prose plugin and inverse in dark
         <article class= {classes!("prose", "dark:prose-invert" ,&props.prose_theme)}>
             {markdown}
         </article>
