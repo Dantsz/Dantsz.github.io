@@ -1,8 +1,8 @@
 [package]
-name = "dantsz_blog"
-version = "0.1.0"
+name = "dantsz_homepage"
+version = "0.2.0"
 edition = "2021"
-description = "Attempt at technical blogging"
+description = "Just a simple Yew app to host my homepage"
 readme = "README.md"
 repository = "https://github.com/yewstack/yew-trunk-minimal-template"
 license = "MIT OR Apache-2.0"
@@ -18,5 +18,5 @@ serde_json = "*"
 gloo-net = "0.6.0"
 wasm-bindgen-futures = "0.4.34"
 yew-interop = { version = "0.3.0", features = ["script"] }
-comrak = "0.35.0"
+comrak = "0.39.1"
 gloo-console = "0.3.0"
