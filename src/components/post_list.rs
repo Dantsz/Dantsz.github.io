@@ -38,7 +38,7 @@ pub fn post_list(props: &PostListProps) -> Html {
             <div class="w-full grid grid-cols-1 justify-items-start gap-y-5">
                 {post_list.iter().
                                 map(|name| html!(
-                                    <div class = " w-full bg-gradient-to-r from-gray-800 to-gray-900 px-2">
+                                    <div class = " w-full bg-gradient-to-r dark:from-gray-800 dark:to-gray-900 px-2">
                                         <p>{name}</p>
                                         <a href={format!("#/post/{}",name)}
                                            class = "hover:underline text-cyan-500">
