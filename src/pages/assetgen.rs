@@ -8,16 +8,22 @@ pub fn asset_gen() -> Html {
 
             // 1 column on mobile, 2 columns on md+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-[80vh]">
+            <div>
+                <h1>{"Category: Chairs"}</h1>
                 <iframe
                     title="Chairs"
                     src="/resources/generated_assets/chairs.html"
                     class="w-full h-full border rounded bg-white"
                 />
+            </div>
+            <div>
+                <h1>{"Category: Plants"}</h1>
                 <iframe
                     title="Plants"
                     src="/resources/generated_assets/plants.html"
                     class="w-full h-full border rounded bg-white"
                 />
+            </div>
             </div>
         </section>
     }
