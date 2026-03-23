@@ -13,6 +13,9 @@ fn switch(routes: Route) -> Html {
         Route::Post { id } => html! {
             <MarkdownPostPage article_id = {id}></MarkdownPostPage>
         },
+        Route::AssetGen => html! {
+            <crate::pages::assetgen::AssetGen></crate::pages::assetgen::AssetGen>
+        },
     }
 }
 

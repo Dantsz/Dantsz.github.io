@@ -6,6 +6,8 @@ pub enum Route {
     Home,
     #[at("/post/:id")]
     Post { id: String },
+    #[at("/assetgen")]
+    AssetGen,
     #[not_found]
     #[at("/404")]
     NotFound,
